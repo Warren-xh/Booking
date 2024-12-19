@@ -14,7 +14,7 @@ function Logon() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       // 登录成功后的处理逻辑，例如跳转到主页
-      history.push("/home");
+      history.push("/Home");
     } catch (err) {
       setError(err.message);
       console.error("登录失败:", err.message);
