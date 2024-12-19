@@ -1,18 +1,19 @@
 import "./styles.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react";
 import Home from "./pages/Home/Home";
+import Logon from "./Logon";
+
+//import firebase from "./firebase.js";
 
 export default function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Logon} />
+        </Switch>
+      </Router>
     </div>
   );
 }
