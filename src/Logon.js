@@ -7,6 +7,7 @@ function Logon() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
   const history = useHistory();
 
   const handleLogin = async (e) => {
@@ -14,19 +15,19 @@ function Logon() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       // 登录成功后的处理逻辑，例如跳转到主页
-      history.push("/Home");
+      setSuccessMessage("Success! Welcome");
     } catch (err) {
       setError(err.message);
-      console.error("登录失败:", err.message);
+      console.error("Fail login:", err.message);
     }
   };
 
   return (
     <div>
-      <h2>登录</h2>
+      <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <div>
-          <label>电子邮件:</label>
+          <label>Email: </label>
           <input
             type="email"
             value={email}
@@ -35,7 +36,7 @@ function Logon() {
           />
         </div>
         <div>
-          <label>密码:</label>
+          <label>Password: </label>
           <input
             type="password"
             value={password}
@@ -43,8 +44,9 @@ function Logon() {
             required
           />
         </div>
-        <button type="submit">登录</button>
+        <button type="submit">Submit</button>
         {error && <p>{error}</p>}
+        {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
       </form>
     </div>
   );
