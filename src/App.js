@@ -5,7 +5,7 @@ import Home from "./pages/Home/Home";
 import Signup from "./Signup";
 import Logon from "./Logon";
 
-//import firebase from "./firebase.js";
+// import firebase from "./firebase.js";
 
 export default function App() {
   return (
@@ -13,6 +13,8 @@ export default function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Signup} />
+          <Route path="/home" component={Home} />
+          <Route path="/logon" component={Logon} />
         </Switch>
       </Router>
     </div>
