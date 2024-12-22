@@ -2,8 +2,8 @@ import "./styles.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from "react";
 import Home from "./pages/Home/Home";
-import Signup from "./Signup";
-import Logon from "./Logon";
+import Signup from "./pages/Signup/Signup";
+import Logon from "./pages/Logon/Logon";
 
 // import firebase from "./firebase.js";
 
