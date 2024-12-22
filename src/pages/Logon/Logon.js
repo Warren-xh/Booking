@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../../firebase.js";
 import { useHistory } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import "./Logon.css"; // 引入 Logon.css
 
 function Logon() {
   const [email, setEmail] = useState("");
@@ -16,6 +17,8 @@ function Logon() {
       await signInWithEmailAndPassword(auth, email, password);
       // 登录成功后的处理逻辑，例如跳转到主页
       setSuccessMessage("Success! Welcome");
+      // 可选：跳转到主页
+      // history.push('/home');
     } catch (err) {
       setError(err.message);
       console.error("Fail login:", err.message);
@@ -23,10 +26,10 @@ function Logon() {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <div>
+      <form onSubmit={handleLogin} className="login-form">
+        <div className="form-group">
           <label>Email: </label>
           <input
             type="email"
@@ -35,7 +38,7 @@ function Logon() {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Password: </label>
           <input
             type="password"
@@ -45,8 +48,8 @@ function Logon() {
           />
         </div>
         <button type="submit">Submit</button>
-        {error && <p>{error}</p>}
-        {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
+        {error && <p className="error-message">{error}</p>}
+        {successMessage && <p className="success-message">{successMessage}</p>}
       </form>
     </div>
   );
