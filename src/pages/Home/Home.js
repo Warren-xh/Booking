@@ -1,7 +1,15 @@
 import React from "react";
+import "./Home.css";
+import Navbar from "../../component/navbar/Navbar";
+import Header from "../../component/header/Header";
 
 const Home = () => {
-  return <div>这里是首页</div>;
+  return (
+    <div>
+      <Navbar />
+      <Header />
+    </div>
+  );
 };
 
 export default Home;
