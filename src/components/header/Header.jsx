@@ -50,6 +50,10 @@ const Header = ({ type }) => {
     navigate("/hotels", { state: { destination, date, options } });
   };
 
+  const handleOrder = () => {
+    navigate("/order");
+  };
+
 
   return (
     <div className="header">
@@ -63,7 +67,7 @@ const Header = ({ type }) => {
             <FontAwesomeIcon icon={faBed} />
             <span>Main</span>
           </div>
-          <div className="headerListItem">
+          <div className="headerListItem" onClick={handleOrder}>
             <FontAwesomeIcon icon={faBars} />
             <span>Orders</span>
           </div>
