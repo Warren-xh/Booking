@@ -18,7 +18,7 @@ function Logon() {
       // 登录成功后的处理逻辑，例如跳转到主页
       setSuccessMessage("Success! Welcome");
       // 可选：跳转到主页
-      // history.push('/home');
+      history.push("/home");
     } catch (err) {
       setError(err.message);
       console.error("Fail login:", err.message);
