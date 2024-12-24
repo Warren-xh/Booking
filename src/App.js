@@ -3,9 +3,11 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Home from "./pages/home/Home";
-import Hotel from "./pages/hotel/Hotel";
-import List from "./pages/list/List";
+import Home from "./pages/home/Home.jsx";
+import Hotel from "./pages/hotel/Hotel.jsx";
+import List from "./pages/list/List.jsx";
+import Signup from "./pages/Signup/Signup.js";
+import Logon from "./pages/Logon/Logon.js";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/hotels" element={<List/>}/>
         <Route path="/hotels/:id" element={<Hotel/>}/>
+        <Route path="/signup" element={<Signup/>}/>
+        <Route path="/logon" element={<Logon/>}/>
       </Routes>
     </BrowserRouter>
   );

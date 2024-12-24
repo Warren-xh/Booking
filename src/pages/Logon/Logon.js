@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { auth } from "../../firebase.js";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import "./Logon.css"; // 引入修改后的 Logon.css
 
@@ -9,7 +9,7 @@ function Logon() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -18,7 +18,7 @@ function Logon() {
       // 登录成功后的处理逻辑，例如跳转到主页
       setSuccessMessage("Success! Welcome");
       // 可选：跳转到主页
-      history.push("/home");
+      // history.push('/home');
     } catch (err) {
       setError(err.message);
       console.error("Fail login:", err.message);
