@@ -1,27 +1,27 @@
-.navbar {
+.navbar{
   height: 50px;
-  background-color: aqua;
+  background-color: #003580;
   display: flex;
   justify-content: center;
 }
 
-.navContainer {
+.navContainer{
   width: 100%;
   max-width: 1024px;
-  color: rgb(255, 255, 255);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo {
+.logo{
   font-weight: 500;
 }
 
-.bavButton {
+.navButton{
   margin-left: 20px;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  color: aqua;
+  color: #003580;
 }
