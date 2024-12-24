@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../../firebase.js";
 import { Link } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import "./Signup.css"; // 引入修改后的 Signup.css
+import "./Signup.css"; 
 
 function Signup() {
   const [email, setEmail] = useState("");
