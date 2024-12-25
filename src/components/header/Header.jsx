@@ -54,6 +54,10 @@ const Header = ({ type }) => {
     navigate("/order");
   };
 
+  const handleAboutUs = () => {
+    navigate("/aboutus");
+  };
+
 
   return (
     <div className="header">
@@ -71,7 +75,7 @@ const Header = ({ type }) => {
             <FontAwesomeIcon icon={faBars} />
             <span>Orders</span>
           </div>
-          <div className="headerListItem">
+          <div className="headerListItem" onClick={handleAboutUs}>
             <FontAwesomeIcon icon={faPerson} />
             <span>About Us</span>
           </div>

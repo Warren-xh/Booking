@@ -9,6 +9,9 @@ import List from "./pages/list/List.jsx";
 import Signup from "./pages/Signup/Signup.js";
 import Logon from "./pages/Logon/Logon.js";
 import Order from "./pages/order/order.jsx";
+import AboutUs from "./pages/aboutUs/aboutUs.jsx";
+
+
 
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/logon" element={<Logon/>}/>
         <Route path="/order" element={<Order/>}/>
+        <Route path="/aboutus" element={<AboutUs/>}/>
       </Routes>
     </BrowserRouter>
   );
