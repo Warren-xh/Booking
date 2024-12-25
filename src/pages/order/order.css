@@ -1,54 +1,42 @@
-/* src/pages/order.css */
-
+/* 页面样式 */
 .orderContainer {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.orderTitle {
+  }
+  
+  .orderTitle {
     font-size: 36px;
     text-align: center;
     font-weight: bold;
     margin-bottom: 30px;
-    color: #333;
-}
-
-.orderSubTitle {
+  }
+  
+  .orderSubTitle {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #555;
-}
-
-.orderItems,
-.orderTotal {
+  }
+  
+  .orderItems {
     width: 100%;
-}
-
-.orderItems {
-    padding-bottom: 10px;
-}
-
-.orderTotalDetails p {
-    font-size: 18px;
-    margin: 10px 0;
-    color: #555;
-}
-
-.orderActions {
+    max-width: 1200px; /* 限制最大宽度 */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .orderActions {
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    gap: 20px;
-}
-
-.orderButton {
+  }
+  
+  .orderButton {
     padding: 15px 40px;
     background-color: #ff7f50;
     color: white;
@@ -57,13 +45,33 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.orderButton:hover {
+  }
+  
+  .orderButton:hover {
     background-color: #ff6347;
-}
-
-.orderButton:focus {
+  }
+  
+  .orderButton:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(255, 99, 71, 0.6);
-}
+  }
+  
+  /* 适配小屏幕 */
+  @media (max-width: 600px) {
+    .orderContainer {
+      padding: 15px;
+    }
+  
+    .orderTitle {
+      font-size: 30px;
+    }
+  
+    .orderSubTitle {
+      font-size: 20px;
+    }
+  
+    .orderButton {
+      font-size: 16px;
+      padding: 12px 30px;
+    }
+  }
+  

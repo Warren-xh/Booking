@@ -1,5 +1,5 @@
 import React from "react";
-import "./orderSummary.css";
+import "./orderSummary.css"; // 组件样式
 
 const OrderSummary = ({ subtotal, tax, shipping, grandTotal }) => {
   return (
