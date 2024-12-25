@@ -1,28 +1,43 @@
+/* OrderItem样式 */
 .orderItem {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 15px;
-    padding: 15px;
     background-color: #fff;
-    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s ease;
+    margin-top: 50px;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
   }
   
   .orderItem img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 8px;
   }
   
   .orderItemDetails {
     flex-grow: 1;
-    padding-left: 15px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .orderItemDetails p {
     margin: 5px 0;
+    color: #555;
+    font-size: 16px;
+  }
+  
+  .orderItemDetails p strong {
+    font-weight: 600;
+    color: #333;
   }
   

@@ -1,50 +1,86 @@
 /* src/components/orderSummary/orderSummary.css */
+
 .orderSummary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* 确保宽度适配 */
+}
+
+.orderSummaryTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: left;
+  width: 100%;
+}
+
+.orderSummaryDetails {
+  width: 100%;
+  font-size: 16px;
+  color: #555;
+}
+
+.orderSummaryDetails p {
+  margin: 8px 0;
+}
+
+.orderSummaryDetails p strong {
+  font-weight: 700;
+  color: #333;
+}
+
+.orderSummaryActions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.removeItemButton {
+  background-color: #f44336; /* 更显眼的红色按钮 */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.removeItemButton:hover {
+  background-color: #d32f2f;
+}
+
+.removeItemButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(243, 67, 54, 0.6);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .orderSummary {
     padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
-  
-  .orderSummary img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 5px;
+
+  .orderSummaryTitle {
+    font-size: 20px;
   }
-  
-  .orderSummaryDetails {
-    flex-grow: 1;
-    padding-left: 15px;
-  }
-  
+
   .orderSummaryDetails p {
-    margin: 5px 0;
-  }
-  
-  .orderSummaryActions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .removeItemButton {
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
     font-size: 14px;
-    margin-top: 5px;
   }
-  
-  .removeItemButton:hover {
-    background-color: #ff4500;
+
+  .removeItemButton {
+    font-size: 14px;
+    padding: 8px 12px;
   }
-  
+}

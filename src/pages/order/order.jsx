@@ -3,12 +3,12 @@ import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
 import OrderItem from "../../components/orderItem/orderItem.jsx";
-import OrderSummary from "../../components/orderSummary/orderSummary";
+import OrderSummary from "../../components/orderSummary/orderSummary.jsx";
 
 import { useState } from "react";
-import "./order.css";
+import "./order.css"; // 页面相关样式
 
-const OrderPage = () => {
+const Order = () => {
   const [rooms, setRooms] = useState([
     {
       id: 1,
@@ -59,10 +59,8 @@ const OrderPage = () => {
     <div>
       <Navbar />
       <Header />
-
       <div className="orderContainer">
         <h1 className="orderTitle">Your Booking Summary</h1>
-
         <div className="orderItems">
           <h2 className="orderSubTitle">Hotels in your cart</h2>
           {rooms.map(room => (
@@ -73,18 +71,15 @@ const OrderPage = () => {
             />
           ))}
         </div>
-
         <OrderSummary
           subtotal={subtotal}
           tax={tax}
           shipping={shipping}
           grandTotal={grandTotal}
         />
-
         <div className="orderActions">
           <button className="orderButton">Proceed to Payment</button>
         </div>
-
         <MailList />
         <Footer />
       </div>
@@ -92,4 +87,4 @@ const OrderPage = () => {
   );
 };
 
-export default OrderPage;
+export default Order;
