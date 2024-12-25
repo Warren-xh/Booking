@@ -1,21 +1,17 @@
-/* src/components/modal.css */
-
-/* 遮罩层 */
 .modalOverlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* 增加透明度，确保遮罩层不过于显眼 */
+    background-color: rgba(0, 0, 0, 0.5); 
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    transition: opacity 0.3s ease; /* 动画效果 */
+    transition: opacity 0.3s ease; 
   }
   
-  /* Modal内容容器 */
   .modalContent {
     background-color: #fff;
     padding: 20px;
@@ -23,11 +19,10 @@
     text-align: center;
     max-width: 500px;
     width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 增加阴影使其更突出 */
-    animation: fadeIn 0.3s ease-out; /* 使弹窗淡入 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    animation: fadeIn 0.3s ease-out;
   }
-  
-  /* 弹窗标题 */
+
   .modalContent h2 {
     font-size: 20px;
     color: #333;
@@ -35,7 +30,6 @@
     margin-bottom: 20px;
   }
   
-  /* 按钮的容器 */
   .modalActions {
     display: flex;
     justify-content: center;
@@ -43,7 +37,6 @@
     margin-top: 20px;
   }
   
-  /* 按钮的基本样式 */
   .modalButton {
     padding: 10px 20px;
     font-size: 16px;
@@ -51,7 +44,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
-    min-width: 100px; /* 确保按钮宽度一致 */
+    min-width: 100px; 
   }
   
   .confirmButton {
@@ -64,42 +57,37 @@
     color: white;
   }
   
-  /* 按钮的悬停效果 */
   .modalButton:hover {
     opacity: 0.8;
   }
   
-  /* 取消按钮的焦点效果 */
   .cancelButton:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.6);
   }
   
-  /* 确认按钮的焦点效果 */
   .confirmButton:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.6);
   }
   
-  /* 手机端优化：确保弹窗适应小屏幕 */
   @media (max-width: 600px) {
     .modalContent {
       padding: 15px;
-      width: 90%; /* 限制宽度 */
+      width: 90%; 
     }
   
     .modalActions {
       flex-direction: column;
-      gap: 10px; /* 按钮间距适应手机屏幕 */
+      gap: 10px; 
     }
   
     .modalButton {
-      font-size: 14px; /* 调整按钮字体大小 */
-      padding: 8px 16px; /* 调整按钮尺寸 */
+      font-size: 14px; 
+      padding: 8px 16px; 
     }
   }
   
-  /* 弹窗淡入动画 */
   @keyframes fadeIn {
     0% {
       opacity: 0;
