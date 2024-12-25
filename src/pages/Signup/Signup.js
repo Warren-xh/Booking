@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../../firebase.js";
 import { Link } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import "./Signup.css"; 
+import "./Signup.css"; // 引入修改后的 Signup.css
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -33,13 +33,14 @@ function Signup() {
   };
 
   return (
-    <>
-      <h2 className="signup-h2">Sign Up</h2>
+    <div className="signup-body">
       <div className="signup-div">
-        {error && <div style={{ color: "red" }}>{error}</div>}
-        {successMessage && (
-          <div style={{ color: "green" }}>{successMessage}</div>
-        )}
+        <h2 className="signup-h2">Sign Up</h2>
+        {/* Error and success message handling */}
+        {error && <p className="signup-p error">{error}</p>}
+        {successMessage && <p className="signup-p success">{successMessage}</p>}
+
+        {/* Form for signup */}
         <form onSubmit={handleSubmit} className="signup-form">
           <div>
             <label className="signup-label">Email: </label>
@@ -81,11 +82,13 @@ function Signup() {
             Submit
           </button>
         </form>
+
+        {/* Link to the login page */}
         <p className="signup-p">
           Already registered? <Link to="/logon">Login</Link>
         </p>
       </div>
-    </>
+    </div>
   );
 }
 

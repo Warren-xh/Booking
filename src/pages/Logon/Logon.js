@@ -15,10 +15,8 @@ function Logon() {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // 登录成功后的处理逻辑，例如跳转到主页
       setSuccessMessage("Success! Welcome");
-      // 可选：跳转到主页
-      // history.push('/home');
+      history("/home"); // 使用 history 来跳转
     } catch (err) {
       setError(err.message);
       console.error("Fail login:", err.message);
@@ -26,37 +24,44 @@ function Logon() {
   };
 
   return (
-    <div className="logon-login-container">
-      <h2 className="logon-header">Login</h2>
-      <form onSubmit={handleLogin} className="logon-login-form">
-        <div className="logon-form-group">
-          <label className="logon-label">Email: </label>
-          <input
-            type="email"
-            className="logon-input"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="logon-form-group">
-          <label className="logon-label">Password: </label>
-          <input
-            type="password"
-            className="logon-input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit" className="logon-button">
-          Submit
-        </button>
+    <div className="logon-body">
+      <div className="logon-login-container">
+        <h2 className="logon-header">Login</h2>
+        <form onSubmit={handleLogin} className="logon-login-form">
+          <div className="logon-form-group">
+            <label className="logon-label">Email: </label>
+            <input
+              type="email"
+              className="logon-input"
+              placeholder="Your Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="logon-form-group">
+            <label className="logon-label">Password: </label>
+            <input
+              type="password"
+              className="logon-input"
+              placeholder="Your Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit" className="logon-button">
+            Submit
+          </button>
+        </form>
         {error && <p className="logon-error-message">{error}</p>}
         {successMessage && (
           <p className="logon-success-message">{successMessage}</p>
         )}
-      </form>
+        <p className="logon-signup-link">
+          Don't have an account? <a href="/signup">Sign up</a>
+        </p>
+      </div>
     </div>
   );
 }

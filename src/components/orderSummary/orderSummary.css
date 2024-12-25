@@ -1,0 +1,50 @@
+/* src/components/orderSummary/orderSummary.css */
+.orderSummary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orderSummary img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .orderSummaryDetails {
+    flex-grow: 1;
+    padding-left: 15px;
+  }
+  
+  .orderSummaryDetails p {
+    margin: 5px 0;
+  }
+  
+  .orderSummaryActions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .removeItemButton {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .removeItemButton:hover {
+    background-color: #ff4500;
+  }
+  

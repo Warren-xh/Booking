@@ -1,0 +1,28 @@
+.quantityControl {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantityButton {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 5px;
+  }
+  
+  .quantityButton:hover {
+    background-color: #ff6347;
+  }
+  
+  .quantityInput {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+  

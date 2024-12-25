@@ -1,49 +1,62 @@
-/* Signup.css */
+/* Body styling for signup page */
 .signup-body {
   font-family: "Arial", sans-serif;
-  background-color: #f4f7fa;
-  margin: 0;
-  padding: 0;
+  background-color: #f7f7f7;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
-.signup-h2 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-  font-size: 24px;
-}
-
+/* Main container for the signup form */
 .signup-div {
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
   border-radius: 8px;
   padding: 40px;
-  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Header styling */
+.signup-h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 24px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Form container styling */
 .signup-form {
   display: flex;
   flex-direction: column;
+  gap: 15px;
+  width: 100%;
 }
 
+/* Label styling */
 .signup-label {
   font-size: 14px;
-  margin-bottom: 8px;
-  color: #555;
+  color: #666;
+  margin-bottom: 5px;
+  width: 100%;
 }
 
+/* Input field styling */
 .signup-input {
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  transition: border-color 0.3s ease;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s ease-in-out;
 }
 
 .signup-input:focus {
@@ -51,13 +64,15 @@
   outline: none;
 }
 
+/* Submit button styling */
 .signup-button {
-  padding: 12px;
+  width: 100%;
+  padding: 14px;
   background-color: #007bff;
   color: white;
-  font-size: 16px;
   border: none;
   border-radius: 4px;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -75,13 +90,15 @@
   cursor: not-allowed;
 }
 
+/* Error and success message styling */
 .signup-p {
-  text-align: center;
   font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .signup-p.error {
-  color: red;
+  color: #f44336; /* Red color for error messages */
 }
 
 .signup-p.success {
@@ -89,6 +106,7 @@
   font-weight: bold;
 }
 
+/* Link to login page */
 .signup-p a {
   color: #007bff;
   text-decoration: none;
@@ -99,19 +117,23 @@
   text-decoration: underline;
 }
 
-/* Responsive design */
-@media (max-width: 480px) {
+/* Responsive design for small screens */
+@media (max-width: 600px) {
   .signup-div {
     padding: 20px;
     width: 90%;
   }
 
   .signup-h2 {
-    font-size: 20px;
+    font-size: 24px;
   }
 
-  .signup-input,
-  .signup-button {
+  .signup-input {
+    padding: 10px;
     font-size: 14px;
+  }
+
+  .signup-button {
+    padding: 12px;
   }
 }

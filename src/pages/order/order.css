@@ -1,0 +1,110 @@
+/* src/pages/order.css */
+
+.orderContainer {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px; /* 添加内边距，使得容器内的内容更舒适 */
+}
+
+.orderTitle {
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.orderSubTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.orderItems,
+.orderTotal {
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #fff;
+}
+
+.orderItems {
+    padding-bottom: 10px;
+}
+
+.orderTotalDetails p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.orderActions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.orderButton {
+    padding: 15px 40px;
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.orderButton:hover {
+    background-color: #ff6347;
+}
+
+.orderButton:focus {
+    outline: none;
+}
+
+/* QuantityControl 样式调整 */
+.quantityControl {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: center;
+    gap: 10px; /* 增加间距，使按钮和输入框不那么拥挤 */
+}
+
+.quantityButton {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantityButton:hover {
+    background-color: #ff6347;
+}
+
+.quantityInput {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Add spacing between quantity input and room price details */
+.orderItemDetails p {
+    margin: 5px 0;
+}
+
+/* Adding some space at the bottom of the order summary */
+.orderSummaryDetails {
+    padding-bottom: 15px;
+}
