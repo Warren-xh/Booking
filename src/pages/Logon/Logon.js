@@ -16,7 +16,7 @@ function Logon() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       setSuccessMessage("Success! Welcome");
-      history("/home"); // 使用 history 来跳转
+      history("/"); // 使用 history 来跳转
     } catch (err) {
       setError(err.message);
       console.error("Fail login:", err.message);
