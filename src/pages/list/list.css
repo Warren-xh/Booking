@@ -81,3 +81,27 @@
 .listResult {
   flex: 3;
 }
+
+.resultTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.resultTable th, .resultTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.resultTable th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.hotelImage {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
