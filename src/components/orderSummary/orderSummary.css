@@ -1,6 +1,4 @@
-/* orderSummary.css */
 
-/* 外部容器样式 */
 .orderSummary {
   background-color: #ffffff;
   border-radius: 10px;
@@ -13,7 +11,7 @@
   margin-right: auto;
 }
 
-/* 标题样式 */
+
 .orderSummaryTitle {
   font-size: 24px;
   font-weight: bold;
@@ -22,7 +20,7 @@
   text-align: center;
 }
 
-/* 详细信息容器 */
+
 .orderSummaryDetails {
   font-size: 18px;
   color: #666;

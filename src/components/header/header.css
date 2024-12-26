@@ -1,5 +1,5 @@
 .header {
-  background-color: #003580;
+  background-color: #6f42c1;
   color: white;
   display: flex;
   justify-content: center;
@@ -25,13 +25,13 @@
 .headerListItem {
   transition: border-color 0.3s, background-color 0.3s;
   padding: 10px;
-  border-radius: 20px; /* 圆角 */
-  /* 其他样式保持不变 */
+  border-radius: 20px;
+
 }
 
 .headerListItem:hover {
   box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
-  background-color: #005599;
+  background-color: #febb02;
   padding: 10px;
   cursor: pointer;
 }
@@ -41,7 +41,7 @@
 }
 
 .headerBtn {
-  background-color: #0071c2;
+  background-color: #ffc107;
   color: white;
   font-weight: 500;
   border: none;
@@ -119,8 +119,8 @@
 .optionCounterButton {
   width: 30px;
   height: 30px;
-  border: 1px solid #0071c2;
-  color: #0071c2;
+  border: 1px solid #6f42c1;
+  color: #6f42c1;
   cursor: pointer;
   background-color: white;
 }

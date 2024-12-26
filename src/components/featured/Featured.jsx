@@ -5,36 +5,35 @@ const Featured = () => {
     <div className="featured">
       <div className="featuredItem">
         <img
-          src="https://cf.bstatic.com/xdata/images/city/max500/957801.webp?k=a969e39bcd40cdcc21786ba92826063e3cb09bf307bcfeac2aa392b838e9b7a5&o="
+          src="https://tse3-mm.cn.bing.net/th/id/OIP-C.BVCR4fpYwtkEZNd2v1hMfgHaE8?w=253&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
           alt=""
           className="featuredImg"
-          onClick="www.baidu.com"
         />
         <div className="featuredTitles">
-          <h1>Dublin</h1>
+          <h1>FuZhou</h1>
           <h2>123 properties</h2>
         </div>
       </div>
-      
+
       <div className="featuredItem">
         <img
-          src="https://cf.bstatic.com/xdata/images/city/max500/690334.webp?k=b99df435f06a15a1568ddd5f55d239507c0156985577681ab91274f917af6dbb&o="
+          src="https://tse2-mm.cn.bing.net/th/id/OIP-C.Rankv9dtPMH06jogPdwWAAHaE7?w=257&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
           alt=""
           className="featuredImg"
         />
         <div className="featuredTitles">
-          <h1>Reno</h1>
+          <h1>Dublin</h1>
           <h2>533 properties</h2>
         </div>
       </div>
       <div className="featuredItem">
         <img
-          src="https://cf.bstatic.com/xdata/images/city/max500/689422.webp?k=2595c93e7e067b9ba95f90713f80ba6e5fa88a66e6e55600bd27a5128808fdf2&o="
+          src="https://tse1-mm.cn.bing.net/th/id/OIP-C.a9rVWpBUO5b39wqmXQakiwHaE8?w=296&h=197&c=7&r=0&o=5&dpr=1.3&pid=1.7"
           alt=""
           className="featuredImg"
         />
         <div className="featuredTitles">
-          <h1>Austin</h1>
+          <h1>BeiJing</h1>
           <h2>532 properties</h2>
         </div>
       </div>

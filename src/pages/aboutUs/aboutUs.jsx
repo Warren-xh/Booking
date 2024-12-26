@@ -11,7 +11,7 @@ const AboutUs = () => {
   return (
     <div>
       <Navbar />
-      <Header/>
+      <Header type = "list" />
       <div className="homeContainer">
 
         <h1 className="homeTitle">rowse by property type</h1>

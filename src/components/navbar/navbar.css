@@ -1,6 +1,6 @@
 .navbar{
   height: 50px;
-  background-color: #003580;
+  background-color: #6f42c1;
   display: flex;
   justify-content: center;
 }
@@ -16,6 +16,8 @@
 
 .logo{
   font-weight: 500;
+   border: #4b007d;
+  border-radius: 3px;
 }
 
 .navButton{
@@ -23,5 +25,5 @@
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  color: #003580;
+  color: #6f42c1;
 }

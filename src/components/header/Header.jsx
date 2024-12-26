@@ -83,11 +83,12 @@ const Header = ({ type }) => {
         {type !== "list" && (
           <>
             <h1 className="headerTitle">
-              A lifetime of discounts? It's Genius.
+              Set your mind at ease and stay at ease
             </h1>
             <p className="headerDesc">
-              Get rewarded for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+              The best prices will be offered here and we wish you all the best for your trip!
+              <br/>
+              Click on the latest policy to view the offer
             </p>
             <button className="headerBtn">Policy</button>
             <div className="headerSearch">

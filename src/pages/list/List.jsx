@@ -20,13 +20,21 @@ const List = () => {
 
   const selectedDays = differenceInDays(date[0]?.endDate, date[0]?.startDate) || 1;
 
-  // 从 localStorage 获取购物车数据
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(savedCart);
   }, [])
 
-  // 搜索酒店
+  useEffect(() => {
+    if (destination) {
+      const results = hotelData.filter((item) =>
+          item.location.toLowerCase().includes(destination.toLowerCase())
+      );
+      setSearchResults(results);
+    }
+  }, [destination]);
+
+
   const handleSearch = () => {
     const results = hotelData.filter(
       (item) =>
