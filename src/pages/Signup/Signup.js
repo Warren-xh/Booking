@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { auth } from "../../firebase.js";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import "./Signup.css"; // 引入修改后的 Signup.css
 
@@ -10,7 +11,7 @@ function Signup() {
   const [password2, setPassword2] = useState("");
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
-
+  const history = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
@@ -27,6 +28,7 @@ function Signup() {
       setEmail("");
       setPassword("");
       setPassword2("");
+      history("/");
     } catch (err) {
       setError(err.message);
     }
