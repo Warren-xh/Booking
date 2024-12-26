@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navContainer">
-        <span className="logo">booking</span>
+        <span className="logo">C5385FZ Reservation</span>
         <span>Welcome: {email || "Guest"}</span> {/* 默认显示 "Guest" */}
         <div className="navItems">
           <button className="navButton" onClick={handleSignup}>
