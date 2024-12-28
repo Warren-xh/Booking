@@ -1,0 +1,98 @@
+.aboutUsContainer{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.aboutUsTitle{
+  width: 1024px;
+  font-size: 20px;
+}
+
+.aboutUsWrapper {
+    padding: 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  
+  .sectionTitle {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .teamSection, .projectSection {
+    margin-bottom: 40px;
+  }
+  
+  .teamMembers {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .teamMember {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  .teamMemberImg {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .teamMemberName {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .teamMemberRole {
+    font-size: 16px;
+    color: #0071c2;
+    margin-bottom: 5px;
+  }
+  
+  .teamMemberSkills {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .projectDesc {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .techStackList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .techStackList li {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .projectGoals {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .teamMember {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  

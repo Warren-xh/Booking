@@ -1,9 +1,17 @@
+import { useNavigate } from 'react-router-dom';
 import "./featuredProperties.css";
 
 const FeaturedProperties = () => {
+  const navigate = useNavigate();
+
+   const handleImageClick = (propertyId) => {
+    navigate(`/hotels/${propertyId}`);
+  };
+
+
   return (
     <div className="fp">
-      <div className="fpItem">
+      <div className="fpItem" onClick={() => handleImageClick("fzu")}>
         <img
           src="https://tse4-mm.cn.bing.net/th/id/OIP-C.1tW7WUaNX6UerDUSYY7OMwHaE1?w=260&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
           alt=""
@@ -17,7 +25,7 @@ const FeaturedProperties = () => {
           <span>Excellent</span>
         </div>
       </div>
-      <div className="fpItem">
+      <div className="fpItem" onClick={() => handleImageClick("maynooth")}>
         <img
           src="https://tse4-mm.cn.bing.net/th/id/OIP-C.I1plNlbacEkH463uniGytgHaEc?w=209&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
           alt=""

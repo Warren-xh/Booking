@@ -17,10 +17,9 @@ const Hotel = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
 
-  const location = useLocation;
-  const {state} = location.state || {};
-
-  const { destination, date, options } = state;
+  // const location = useLocation();
+  // const { state } = location || {};
+  // const { destination, date, options } = state || {};
 
   const photos = [
     {
@@ -63,12 +62,11 @@ const Hotel = () => {
   return (
       <div>
         <Navbar/>
-        <div className="hotelInfo">
-          <h1>Destination:{destination}</h1>
-          <p>Date: {date.startDate.toLocaleString()}</p>
-        </div>
+        {/* <div className="hotelInfo">
+          <h1>Destination:{destination || "Default Destination"}</h1>
+          <p>Date: {date?.startDate?.toLocaleString() || "No date available"}</p>
+        </div> */}
         <Header type="list"/>
-
 
         <div className="hotelContainer">
           {open && (

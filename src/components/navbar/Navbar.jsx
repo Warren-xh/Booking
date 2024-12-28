@@ -5,16 +5,16 @@ import "./navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState(null); // 使用 useState 管理 email
+  const [email, setEmail] = useState(null); 
 
   useEffect(() => {
     const auth = getAuth();
     const user = auth.currentUser;
 
     if (user) {
-      setEmail(user.email); // 更新 email 状态
+      setEmail(user.email); 
     }
-  }, []); // 只在组件首次渲染时获取用户信息
+  }, []); 
 
   const handleLogin = () => {
     navigate("/logon");
@@ -28,7 +28,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navContainer">
         <span className="logo">C5385FZ Reservation</span>
-        <span>Welcome: {email || "Guest"}</span> {/* 默认显示 "Guest" */}
+        <span>Welcome: {email || "Guest"}</span>
         <div className="navItems">
           <button className="navButton" onClick={handleSignup}>
             Register
