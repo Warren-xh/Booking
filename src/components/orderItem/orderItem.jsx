@@ -2,6 +2,10 @@ import React from "react";
 import "./orderItem.css";
 
 const OrderItem = ({ room, onQuantityChange }) => {
+  const ratingLabel = room.rating > 4.5 ? "Excellent" :
+                      room.rating > 3.5 ? "Good" :
+                      room.rating > 2 ? "Average" : "Poor";
+
   return (
     <div className="orderItemContainer">
       <div className="orderItemDetails">
@@ -17,11 +21,15 @@ const OrderItem = ({ room, onQuantityChange }) => {
               <strong>Amenities:</strong> {room.amenities.join(", ")}
             </div>
             <div className="orderItemRating">
-              <strong>Rating:</strong> {room.rating}
+              {ratingLabel} {room.rating} 🌟
             </div>
             <div className="orderItemPrice">
               <strong>Price per night:</strong> ${room.price.toFixed(2)}
             </div>
+          </div>
+
+          <div className="orderItemNights">
+            <strong>Stay Duration:</strong> {room.nights} night{room.nights > 1 ? "s" : ""}
           </div>
           
           <div className="orderItemRooms">
