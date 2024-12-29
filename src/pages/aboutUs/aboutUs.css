@@ -56,6 +56,12 @@
     font-weight: bold;
     margin-bottom: 5px;
   }
+  .teamMemberId{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom: 5px;
+    color: #0071c2;
+  }
   
   .teamMemberRole {
     font-size: 16px;

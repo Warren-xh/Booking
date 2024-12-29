@@ -1,11 +1,11 @@
-.navbar{
+.navbar {
   height: 50px;
-  background-color: #6f42c1;
+  background-color: #9370DB;
   display: flex;
   justify-content: center;
 }
 
-.navContainer{
+.navContainer {
   width: 100%;
   max-width: 1024px;
   color: white;
@@ -14,13 +14,24 @@
   justify-content: space-between;
 }
 
-.logo{
+.logo {
   font-weight: 500;
-   border: #4b007d;
+  border:  #9370DB;
   border-radius: 3px;
 }
 
-.navButton{
+.logoImage {
+  height: 100%;
+  max-height: 50px;
+  width: auto;
+  margin-right: 10px;
+  object-fit: contain;
+  transform: scale(2);
+  transform-origin: center;
+}
+
+
+.navButton {
   margin-left: 20px;
   border: none;
   padding: 5px 10px;

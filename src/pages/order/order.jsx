@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
-import Footer from "../../components/footer/Footer";
 import OrderItem from "../../components/orderItem/orderItem.jsx";
 import OrderSummary from "../../components/orderSummary/orderSummary.jsx";
 import Modal from "../../components/modal/Modal";
@@ -115,7 +114,6 @@ const Order = () => {
           </div>
         </div>
         <MailList />
-        <Footer />
       </div>
 
       <Modal

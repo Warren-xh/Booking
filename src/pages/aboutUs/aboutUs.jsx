@@ -1,4 +1,4 @@
-import Footer from "../../components/footer/Footer";
+
 import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
 import Navbar from "../../components/navbar/Navbar";
@@ -15,27 +15,28 @@ const AboutUs = () => {
       <Header type="list" />
       <div className="aboutUsContainer">
         <div className="aboutUsWrapper">
-          {/* 团队介绍部分 */}
           <section className="teamSection">
             <h2 className="sectionTitle">Meet Our Team</h2>
             <div className="teamMembers">
               <div className="teamMember">
                 <img
-                  src={teamMemberImage1}
-                  alt="Team Member 1"
-                  className="teamMemberImg"
+                    src={teamMemberImage1}
+                    alt="Team Member 1"
+                    className="teamMemberImg"
                 />
-                <h3 className="teamMemberName">hxh</h3>
-                <p className="teamMemberRole">Overwatcher</p>
-                <p className="teamMemberSkills">Skills: Overwatch</p>
+                <h3 className="teamMemberName">XinHang Hu</h3>
+                <p1 className="teamMemberId">MU ID: 22125841 FZU ID:832204222</p1>
+                <p className="teamMemberRole">Backend Developer</p>
+                <p className="teamMemberSkills">Skills: Overwatch,innovation,interactive design</p>
               </div>
               <div className="teamMember">
                 <img
-                  src={teamMemberImage2}
-                  alt="Team Member 2"
-                  className="teamMemberImg"
+                    src={teamMemberImage2}
+                    alt="Team Member 2"
+                    className="teamMemberImg"
                 />
-                <h3 className="teamMemberName">flq</h3>
+                <h3 className="teamMemberName">LanQi Fan</h3>
+                <p1 className="teamMemberId">MU ID: Overwatch FZU ID:Marvel rivals</p1>
                 <p className="teamMemberRole">Frontend Developer</p>
                 <p className="teamMemberSkills">
                   Skills: React, CSS, JavaScript
@@ -43,11 +44,12 @@ const AboutUs = () => {
               </div>
               <div className="teamMember">
                 <img
-                  src={teamMemberImage3}
-                  alt="Team Member 3"
-                  className="teamMemberImg"
+                    src={teamMemberImage3}
+                    alt="Team Member 3"
+                    className="teamMemberImg"
                 />
-                <h3 className="teamMemberName">lrb</h3>
+                <h3 className="teamMemberName">RuiBo Li</h3>
+                <p1 className="teamMemberId">MU ID: 22124225 FZU ID:832204128</p1>
                 <p className="teamMemberRole">Backend Developer</p>
                 <p className="teamMemberSkills">Skills: Firebase, JavaScript</p>
               </div>
@@ -76,7 +78,6 @@ const AboutUs = () => {
           </section>
         </div>
         <MailList />
-        <Footer />
       </div>
     </div>
   );
