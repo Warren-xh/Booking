@@ -4,7 +4,7 @@ import "./featuredProperties.css";
 const FeaturedProperties = () => {
   const navigate = useNavigate();
 
-   const handleImageClick = (propertyId) => {
+  const handleImageClick = (propertyId) => {
     navigate(`/hotels/${propertyId}`);
   };
 

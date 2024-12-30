@@ -1,13 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./searchItem.css";
 
-const SearchItem = ({ room, onAddToCart }) => {
+const SearchItem = ({ key, room, onAddToCart }) => {
+  const navigate = useNavigate();
+
+  const handleImageClick = (key) => {
+    navigate(`/hotels/${key}`);
+  };
+
   return (
     <div className="searchItem">
       <img
         src={room.image}
         alt={room.name}
         className="siImg"
+        onClick={() => handleImageClick({key})}
       />
       <div className="siDesc">
         <h1 className="siTitle">{room.name}</h1>

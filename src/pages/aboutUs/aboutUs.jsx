@@ -36,7 +36,7 @@ const AboutUs = () => {
                     className="teamMemberImg"
                 />
                 <h3 className="teamMemberName">LanQi Fan</h3>
-                <p1 className="teamMemberId">MU ID: Overwatch FZU ID:Marvel rivals</p1>
+                <p1 className="teamMemberId">MU ID: 22124195 FZU ID:832204121</p1>
                 <p className="teamMemberRole">Frontend Developer</p>
                 <p className="teamMemberSkills">
                   Skills: React, CSS, JavaScript
