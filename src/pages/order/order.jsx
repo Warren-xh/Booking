@@ -77,7 +77,6 @@ const Order = () => {
     setCart([]);  // 更新状态，清空页面上的购物车
 
     setIsModalOpen(false);
-    // 这里可以执行重定向到支付页面的逻辑
   };
 
   return (

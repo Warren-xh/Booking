@@ -2,11 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./searchItem.css";
 
-const SearchItem = ({ key, room, onAddToCart }) => {
+const SearchItem = ({room, onAddToCart }) => {
   const navigate = useNavigate();
 
-  const handleImageClick = (key) => {
-    navigate(`/hotels/${key}`);
+  const handleImageClick = (id) => {
+    navigate(`/hotels/${id}`);
   };
 
   return (
@@ -15,7 +15,7 @@ const SearchItem = ({ key, room, onAddToCart }) => {
         src={room.image}
         alt={room.name}
         className="siImg"
-        onClick={() => handleImageClick({key})}
+        onClick={() => handleImageClick(room.id)}
       />
       <div className="siDesc">
         <h1 className="siTitle">{room.name}</h1>
