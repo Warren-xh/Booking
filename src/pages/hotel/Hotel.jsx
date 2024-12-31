@@ -10,16 +10,16 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
-import { hotelData } from '../list/data';
+import { useParams } from "react-router-dom";
+import { hotelData } from "../list/data";
 
 const Hotel = () => {
   const { id } = useParams();
   const [hotel, setHotel] = useState(null);
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
-  const [cart, setCart] = useState([]);  // 用于管理购物车
-  const [selectedDays, setSelectedDays] = useState(1);  // 默认选择1天
+  const [cart, setCart] = useState([]); // 用于管理购物车
+  const [selectedDays, setSelectedDays] = useState(1); // 默认选择1天
 
   const photos = [
     {
@@ -44,7 +44,7 @@ const Hotel = () => {
 
   useEffect(() => {
     const currentHotel = hotelData.find((hotel) => hotel.id === parseInt(id));
-    setHotel(currentHotel);  // 设置当前酒店数据
+    setHotel(currentHotel); // 设置当前酒店数据
   }, [id]);
 
   // 添加到购物车的函数
@@ -55,15 +55,15 @@ const Hotel = () => {
       (item) => item.id === hotel.id && item.nights === selectedDays
     );
 
- let updatedCart;
+    let updatedCart;
     if (existingHotelIndex === -1) {
       updatedCart = [...cart, { ...newCartItem, quantity: 1 }];
     } else {
       updatedCart = [...cart];
-      updatedCart[existingHotelIndex].quantity += 1;  // 增加数量
+      updatedCart[existingHotelIndex].quantity += 1; // 增加数量
     }
 
-    setCart(updatedCart); 
+    setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     alert(`${hotel.name} has been added to the cart.`);
   };
@@ -82,87 +82,94 @@ const Hotel = () => {
       newSlideNumber = slideNumber === 5 ? 0 : slideNumber + 1;
     }
 
-    setSlideNumber(newSlideNumber)
+    setSlideNumber(newSlideNumber);
   };
 
   if (!hotel) return <div>Loading...</div>;
 
   return (
-      <div>
-        <Navbar/>
-        <Header type="list"/>
+    <div>
+      <Navbar />
+      <Header type="list" />
 
-        <div className="hotelContainer">
-          {open && (
-              <div className="slider">
-                <FontAwesomeIcon
-                    icon={faCircleXmark}
-                    className="close"
-                    onClick={() => setOpen(false)}
-                />
-                <FontAwesomeIcon
-                    icon={faCircleArrowLeft}
-                    className="arrow"
-                    onClick={() => handleMove("l")}
-                />
-                <div className="sliderWrapper">
-                  <img src={photos[slideNumber].src} alt="" className="sliderImg"/>
-                </div>
-                <FontAwesomeIcon
-                    icon={faCircleArrowRight}
-                    className="arrow"
-                    onClick={() => handleMove("r")}
+      <div className="hotelContainer">
+        {open && (
+          <div className="slider">
+            <FontAwesomeIcon
+              icon={faCircleXmark}
+              className="close"
+              onClick={() => setOpen(false)}
+            />
+            <FontAwesomeIcon
+              icon={faCircleArrowLeft}
+              className="arrow"
+              onClick={() => handleMove("l")}
+            />
+            <div className="sliderWrapper">
+              <img src={photos[slideNumber].src} alt="" className="sliderImg" />
+            </div>
+            <FontAwesomeIcon
+              icon={faCircleArrowRight}
+              className="arrow"
+              onClick={() => handleMove("r")}
+            />
+          </div>
+        )}
+        <div className="hotelWrapper">
+          <button className="bookNow" onClick={() => addToCart(hotel)}>
+            Reserve or Book Now!
+          </button>
+          <h1 className="hotelTitle">{hotel.name}</h1>
+          <div className="hotelAddress">
+            <FontAwesomeIcon icon={faLocationDot} />
+            <span>
+              {hotel.location}, {hotel.country}
+            </span>
+          </div>
+          <span className="hotelDistance">{hotel.description}</span>
+          <span className="hotelPriceHighlight">
+            Book a stay over ${hotel.price} at this property and get a free
+            airport taxi
+          </span>
+          <div className="hotelImages">
+            {photos.map((photo, i) => (
+              <div className="hotelImgWrapper" key={i}>
+                <img
+                  onClick={() => handleOpen(i)}
+                  src={photo.src}
+                  alt=""
+                  className="hotelImg"
                 />
               </div>
-          )}
-          <div className="hotelWrapper">
-            <button className="bookNow" onClick={() => addToCart(hotel)}>Reserve or Book Now!</button>
-            <h1 className="hotelTitle">{hotel.name}</h1>
-            <div className="hotelAddress">
-              <FontAwesomeIcon icon={faLocationDot}/>
-              <span>{hotel.location}, {hotel.country}</span>
+            ))}
+          </div>
+          <div className="hotelDetails">
+            <div className="hotelDetailsTexts">
+              <h1 className="hotelTitle">
+                Stay in the heart of of {hotel.location}
+              </h1>
+              <p className="hotelDesc">{hotel.comments}</p>
             </div>
-            <span className="hotelDistance">
-            Excellent location – 500m from center
-          </span>
-            <span className="hotelPriceHighlight">
-            Book a stay over ${hotel.price} at this property and get a free airport taxi
-          </span>
-            <div className="hotelImages">
-              {photos.map((photo, i) => (
-                  <div className="hotelImgWrapper" key={i}>
-                    <img
-                        onClick={() => handleOpen(i)}
-                        src={photo.src}
-                        alt=""
-                        className="hotelImg"
-                    />
-                  </div>
-              ))}
-            </div>
-            <div className="hotelDetails">
-              <div className="hotelDetailsTexts">
-                <h1 className="hotelTitle">Stay in the heart of of {hotel.location}</h1>
-                <p className="hotelDesc">{hotel.description}</p>
-              </div>
-              <div className="hotelDetailsPrice">
-                <h1>Perfect for a {selectedDays}-night stay!</h1>
-                
-                <span>
-                Located in the real heart of {hotel.location}, this property has an
-                excellent location score of 9.8!
+            <div className="hotelDetailsPrice">
+              <h1>Perfect for a {selectedDays}-night stay!</h1>
+
+              <span>
+                Located in the real heart of {hotel.location}, this property has
+                an excellent location score of 9.8!
                 <p>({hotel.rooms} rooms available)</p>
               </span>
-                <h2>
-                  <b>${hotel.price}/night</b>      
-                </h2>
-                <button onClick={() => addToCart(hotel)}>Reserve or Book Now!</button>
-              </div>
+              <h2>
+                <b>${hotel.price}/night</b>
+              </h2>
+              <button onClick={() => addToCart(hotel)}>
+                Reserve or Book Now!
+              </button>
             </div>
           </div>
-          <MailList/>
         </div>
+        <MailList />
       </div>
+    </div>
   );
 };
 
