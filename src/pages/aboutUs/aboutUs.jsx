@@ -56,7 +56,6 @@ const AboutUs = () => {
             </div>
           </section>
 
-          {/* 项目介绍部分 */}
           <section className="projectSection">
             <h2 className="sectionTitle">About the Project</h2>
             <p className="projectDesc">

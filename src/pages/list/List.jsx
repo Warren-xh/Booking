@@ -10,13 +10,13 @@ import SearchItem from "../../components/searchItem/SearchItem";
 import { hotelData } from "./data";
 
 const List = () => {
+  // Accessing the location state from the router
   const location = useLocation();
 
-  // 设置状态变量
+  // State variables for managing form inputs, search results, and cart
   const [destination, setDestination] = useState(location.state?.destination || "");
   const [date, setDate] = useState(location.state?.date || []);
   const [openDate, setOpenDate] = useState(false);
-  const [options, setOptions] = useState(location.state?.options || {});
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [cart, setCart] = useState([]);
@@ -25,12 +25,13 @@ const List = () => {
 
   const selectedDays = differenceInDays(date[0]?.endDate, date[0]?.startDate) || 1;
 
+  // Load cart items from local storage on initial render
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(savedCart);
   }, []);
 
-  // 初始加载时根据传入的参数自动搜索
+  // Automatically search hotels on initial load based on passed-in parameters
   useEffect(() => {
     if (isInitialSearch && destination) {
       const initialResults = hotelData.filter((item) =>
@@ -42,6 +43,7 @@ const List = () => {
     }
   }, [destination, isInitialSearch]);
 
+  // Handle hotel search based on destination and hotel name
   const handleSearch = () => {
     setIsSearched(true);
     const results = hotelData.filter(
@@ -52,6 +54,7 @@ const List = () => {
     setSearchResults(results);
   };
 
+   // Add selected hotel to cart or update quantity if already in cart
   const addToCart = (hotel) => {
     const existingHotelIndex = cart.findIndex(
         (item) => item.id === hotel.id && item.nights === selectedDays
@@ -65,7 +68,7 @@ const List = () => {
       updatedCart[existingHotelIndex].quantity += 1;
     }
 
-    setCart(updatedCart);
+    setCart(updatedCart);// Update cart state
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     alert(`${hotel.name} has been added to the cart.`);
   };

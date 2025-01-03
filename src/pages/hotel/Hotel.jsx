@@ -42,12 +42,13 @@ const Hotel = () => {
     },
   ];
 
+  // Load the hotel data from the hotelData array based on the hotel ID from the URL
   useEffect(() => {
     const currentHotel = hotelData.find((hotel) => hotel.id === parseInt(id));
-    setHotel(currentHotel); // 设置当前酒店数据
+    setHotel(currentHotel); // Set the selected hotel data
   }, [id]);
 
-  // 添加到购物车的函数
+  // Function to add the selected hotel to the cart
   const addToCart = (hotel) => {
     const newCartItem = { ...hotel, nights: selectedDays };
 
@@ -60,10 +61,11 @@ const Hotel = () => {
       updatedCart = [...cart, { ...newCartItem, quantity: 1 }];
     } else {
       updatedCart = [...cart];
-      updatedCart[existingHotelIndex].quantity += 1; // 增加数量
+      updatedCart[existingHotelIndex].quantity += 1;
     }
 
     setCart(updatedCart);
+    // Save the updated cart to local storage
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     alert(`${hotel.name} has been added to the cart.`);
   };
@@ -73,6 +75,7 @@ const Hotel = () => {
     setOpen(true);
   };
 
+  // Function to navigate through the images in the slider
   const handleMove = (direction) => {
     let newSlideNumber;
 
@@ -85,6 +88,7 @@ const Hotel = () => {
     setSlideNumber(newSlideNumber);
   };
 
+   // Display a loading message if the hotel data is not yet available
   if (!hotel) return <div>Loading...</div>;
 
   return (

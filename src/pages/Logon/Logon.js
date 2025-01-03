@@ -1,22 +1,28 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; // For state management
 import { auth } from "../../firebase.js";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import "./Logon.css"; // 引入修改后的 Logon.css
+import "./Logon.css";
 
 function Logon() {
+  // Declare state variables to manage user input for email and password, as well as error and success messages
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
+
+   // Use useNavigate to get the navigation function, allowing for page redirection
   const history = useNavigate();
 
+  // Function to handle login event
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
+      // Call Firebase's signInWithEmailAndPassword method to authenticate the user
       await signInWithEmailAndPassword(auth, email, password);
       setSuccessMessage("Success! Welcome");
-      history("/"); // 使用 history 来跳转
+      // Use history to jump
+      history("/"); 
     } catch (err) {
       setError(err.message);
       console.error("Fail login:", err.message);

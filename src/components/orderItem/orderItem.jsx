@@ -38,7 +38,6 @@ const OrderItem = ({ room, onQuantityChange }) => {
         </div>
       </div>
       
-      {/* Move the quantity buttons to the right */}
       <div className="orderItemActions">
         <div className="quantityControls">
           <button 

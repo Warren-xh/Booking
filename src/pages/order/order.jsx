@@ -9,23 +9,29 @@ import Modal from "../../components/modal/Modal";
 import "./order.css"; 
 
 const Order = () => {
+  // State to hold the cart items
   const [cart, setCart] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Load saved cart items from localStorage on component mount
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(savedCart);
   }, []);
 
+   // Handle quantity change for a specific cart item
   const handleQuantityChange = (id, delta) => {
+    // Update quantity and filter out items with quantity <= 0
     const updatedCart = cart
       .map((item) =>
         item.id === id
           ? { ...item, quantity: Math.max(1, item.quantity + delta) }
           : item
       )
+      // Filter out items with quantity 0 or less
       .filter(item => item.quantity > 0); 
 
+    // Merge cart items with the same id and nights
     const mergedCart = updatedCart.reduce((acc, currentItem) => {
       const index = acc.findIndex(item => item.id === currentItem.id && item.nights === currentItem.nights);
       if (index !== -1) {
@@ -40,6 +46,7 @@ const Order = () => {
     localStorage.setItem("cart", JSON.stringify(mergedCart)); 
   };
 
+  // Calculate subtotal, tax, shipping, and grand total for the cart
   const calculateTotal = () => {
     const subtotal = cart.reduce(
       (sum, item) => sum + item.price * item.quantity * item.nights,
@@ -49,6 +56,7 @@ const Order = () => {
     const tax = subtotal * 0.1; 
     const shipping = 0; 
 
+    // Format the values to two decimal places
     const formattedSubtotal = subtotal.toFixed(2);
     const formattedTax = tax.toFixed(2);
     const formattedGrandTotal = (parseFloat(formattedSubtotal) + parseFloat(formattedTax) + shipping).toFixed(2);
@@ -73,8 +81,8 @@ const Order = () => {
 
   const handleConfirmPayment = () => {
     alert("Proceeding to Payment...");
-    localStorage.removeItem("cart");  // 清除 localStorage 中的购物车数据
-    setCart([]);  // 更新状态，清空页面上的购物车
+    localStorage.removeItem("cart");  // Remove cart from localStorage
+    setCart([]);  // Remove cart from localStorage
 
     setIsModalOpen(false);
   };
